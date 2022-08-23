@@ -1,9 +1,10 @@
+import { exec } from "child_process";
 import { Bot } from "grammy";
-import * as child_process from 'child_process';
 require('dotenv').config()
 
 // Create an instance of the `Bot` class and pass your authentication token to it.
 const bot = new Bot(`${process.env.BOT_TOKEN}`);
+
 
 // You can now register listeners on your bot object `bot`.
 // grammY will call the listeners when users send messages to your bot.
@@ -13,6 +14,17 @@ bot.command("start", (ctx) => ctx.reply("Welcome! Up and running."));
 // Handle other messages.
 bot.on("message", async (ctx) => {
     ctx.reply("Got another message!");
+    exec("npx playwright test --headed", (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+    });
 });
 
 // Now that you specified how to handle messages, you can start your bot.
