@@ -1,5 +1,6 @@
 import { Bot } from "grammy";
-import * as child_process from 'child_process'
+import * as child_process from 'child_process';
+require('dotenv').config()
 
 // Create an instance of the `Bot` class and pass your authentication token to it.
 const bot = new Bot("5428717940:AAHXLybqwALX_KOIaSv--VjvQMmFzwSzQl8"); // <-- put your authentication token between the ""
