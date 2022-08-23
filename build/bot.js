@@ -21,9 +21,6 @@ bot.command("start", (ctx) => ctx.reply("Welcome! Up and running."));
 bot.on("message", (ctx) => __awaiter(void 0, void 0, void 0, function* () {
     ctx.reply("Got another message!");
 }));
-bot.command("start", (ctx) => {
-    ctx.replyWithAnimation("test");
-});
 // Now that you specified how to handle messages, you can start your bot.
 // This will connect to the Telegram servers and wait for messages.
 // Start the bot.
