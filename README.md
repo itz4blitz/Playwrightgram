@@ -6,7 +6,13 @@ incognito is a Telegram Automation Bot using Playwright, grammy, and Typescript.
 
 Run ```npm install``` to install all dependencies.
 
-The main entry point for the bot is in ```bots.ts```
+The main entry point for the bot is in ```/src/bots.ts```
+
+Start by adding necessary token and data to ```.env.example``` and rename to ```.env```
+
+Run via ``` npm run dev```
+
+Make changes and compile by saving or ```tsc```
 
 # How to contribute?
 
