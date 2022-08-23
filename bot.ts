@@ -3,7 +3,7 @@ import * as child_process from 'child_process';
 require('dotenv').config()
 
 // Create an instance of the `Bot` class and pass your authentication token to it.
-const bot = new Bot("5428717940:AAHXLybqwALX_KOIaSv--VjvQMmFzwSzQl8"); // <-- put your authentication token between the ""
+const bot = new Bot(`${process.env.BOT_TOKEN}`); // <-- put your authentication token between the ""
 
 // You can now register listeners on your bot object `bot`.
 // grammY will call the listeners when users send messages to your bot.
