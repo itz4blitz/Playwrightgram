@@ -12,8 +12,7 @@ const bot = new Bot(`${process.env.BOT_TOKEN}`);
 bot.command("start", (ctx) => ctx.reply("Welcome! Up and running."));
 // Handle other messages.
 bot.on("message", async (ctx) => {
-    ctx.reply("Got another message!")
-    await child_process.execSync("npx playwright test");
+    ctx.reply("Got another message!");
 });
 
 // Now that you specified how to handle messages, you can start your bot.

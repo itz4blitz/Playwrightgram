@@ -45,14 +45,18 @@ const config = {
             name: 'chromium',
             use: Object.assign({}, test_1.devices['Desktop Chrome']),
         },
-        {
-            name: 'firefox',
-            use: Object.assign({}, test_1.devices['Desktop Firefox']),
-        },
-        {
-            name: 'webkit',
-            use: Object.assign({}, test_1.devices['Desktop Safari']),
-        },
+        // {
+        //   name: 'firefox',
+        //   use: {
+        //     ...devices['Desktop Firefox'],
+        //   },
+        // },
+        // {
+        //   name: 'webkit',
+        //   use: {
+        //     ...devices['Desktop Safari'],
+        //   },
+        // },
         /* Test against mobile viewports. */
         // {
         //   name: 'Mobile Chrome',
@@ -81,7 +85,7 @@ const config = {
         // },
     ],
     /* Folder for test artifacts such as screenshots, videos, traces, etc. */
-    // outputDir: 'test-results/',
+    outputDir: 'reports',
     /* Run your local dev server before starting the tests */
     // webServer: {
     //   command: 'npm run start',
