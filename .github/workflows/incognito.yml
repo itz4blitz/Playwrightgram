@@ -1,0 +1,17 @@
+name: Incognito
+
+on: push
+
+jobs: 
+  incognito:
+    name: incognito code base
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+      uses: actions/checkout@v2
+      
+      - name: Run incognito
+      uses: github/incognito@v3
+      env: 
+        DEFAULT_BRANCH: master
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
