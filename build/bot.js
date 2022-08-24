@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const child_process_1 = require("child_process");
 const grammy_1 = require("grammy");
 require('dotenv').config();
 // Create an instance of the `Bot` class and pass your authentication token to it.
@@ -19,7 +20,19 @@ const bot = new grammy_1.Bot(`${process.env.BOT_TOKEN}`);
 bot.command("start", (ctx) => ctx.reply("Welcome! Up and running."));
 // Handle other messages.
 bot.on("message", (ctx) => __awaiter(void 0, void 0, void 0, function* () {
-    ctx.reply("Got another message!");
+    yield ctx.reply("Message received. \nRunning automation tests");
+    yield (0, child_process_1.exec)("npx playwright test --headed", (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+        ctx.reply("Tests finished");
+    });
 }));
 // Now that you specified how to handle messages, you can start your bot.
 // This will connect to the Telegram servers and wait for messages.

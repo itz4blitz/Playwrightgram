@@ -13,8 +13,8 @@ const bot = new Bot(`${process.env.BOT_TOKEN}`);
 bot.command("start", (ctx) => ctx.reply("Welcome! Up and running."));
 // Handle other messages.
 bot.on("message", async (ctx) => {
-    ctx.reply("Got another message!");
-    exec("npx playwright test --headed", (error, stdout, stderr) => {
+    await ctx.reply("Message received. \nRunning automation tests");
+    await exec("npx playwright test --headed", (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;
@@ -24,6 +24,7 @@ bot.on("message", async (ctx) => {
             return;
         }
         console.log(`stdout: ${stdout}`);
+        ctx.reply("Tests finished");
     });
 });
 
