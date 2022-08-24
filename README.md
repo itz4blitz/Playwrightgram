@@ -17,3 +17,7 @@ Make changes and compile by saving or ```tsc```
 # How to contribute?
 
 Fork the repo and created a PR for code you'd like to see included in the project.
+
+# How to get help?
+
+Join us on Telegram: https://t.me/incognito_tgbot
