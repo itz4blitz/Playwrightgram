@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-      uses: github/checkout@v2
+      uses: github/incognito@v2
       
       - name: Run incognito
       uses: github/incognito@v3
