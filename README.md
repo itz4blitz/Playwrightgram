@@ -2,7 +2,7 @@
 
 incognito is a Telegram Automation Bot using Playwright, grammy, and Typescript. The bot is currently a work in progress and should not be used in a production environment.
 
-![incognito in action](/example/incognito.mp4)
+![incognito in action](https://github.com/itz4blitz/incognito/blob/master/example/incognito.mp4?raw=true)
 
 # How to use the bot?
 
